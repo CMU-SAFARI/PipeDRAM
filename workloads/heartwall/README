@@ -1,0 +1,52 @@
+# heartwall (Rodinia)
+
+Tracks the inner and outer walls of a mouse heart in an ultrasound video.
+
+## Benchmark source
+
+Rodinia Benchmark Suite 3.1 (http://lava.cs.virginia.edu/wiki/rodinia).
+
+Contact (for the original code):
+
+- Ke Wang: kw5na@virginia.edu
+- Shuai Che: sc5nf@cs.virginia.edu
+- Kevin Skadron: skadron@cs.virginia.edu
+
+## Build
+
+```bash
+make
+```
+
+`make` builds `heartwall_baseline.exe`, `heartwall_pim.exe`, `heartwall_pim_fast.exe`.
+
+| Executable | Description |
+| --- | --- |
+| `heartwall_baseline.exe` | CPU baseline |
+| `heartwall_pim.exe` | PUD-instrumented version; also executes every bbop on the CPU |
+| `heartwall_pim_fast.exe` | PUD-instrumented version without CPU execution of bbops (used by `scripts/run_workloads.sh`) |
+
+`make` also builds the AVI helper library in `AVI/`.
+
+## Run
+
+```
+./heartwall_<version>.exe <input.avi> <num_frames> <num_threads>
+```
+
+The paper processes 20 frames of the 3840x2160 video `test_4k.avi` with
+eight threads:
+
+```bash
+./heartwall_pim_fast.exe /path/to/test_4k.avi 20 8
+```
+
+The video is not redistributed. `docs/DATASETS.md` lists its SHA-256
+checksum; without it, the frozen heartwall results in `reference/results/`
+are used.
+
+## Output
+
+The PUD versions write `bbop_statistics.csv`, `transposition.csv`, and
+`bbop_resolution.csv` to the working directory. See `../README.md` for their
+format.

@@ -1,0 +1,48 @@
+# doitgen (PolyBench/C)
+
+Multi-resolution analysis kernel (MADNESS).
+
+## Benchmark source
+
+```
+* * * * * * * * * * * * * * *
+* PolyBench/C 4.2.1 (beta)  *
+* * * * * * * * * * * * * * *
+```
+
+Copyright (c) 2011-2016 The Ohio State University.
+
+Contact (for the original code):
+
+- Louis-Noel Pouchet <pouchet@cse.ohio-state.edu>
+- Tomofumi Yuki <tomofumi.yuki@inria.fr>
+
+## Build
+
+```bash
+make
+```
+
+`make` builds `doitgen_pim.exe`, `doitgen_pim_fast.exe`, `doitgen_baseline.exe`.
+
+| Executable | Description |
+| --- | --- |
+| `doitgen_baseline.exe` | CPU baseline |
+| `doitgen_pim.exe` | PUD-instrumented version; also executes every bbop on the CPU |
+| `doitgen_pim_fast.exe` | PUD-instrumented version without CPU execution of bbops (used by `scripts/run_workloads.sh`) |
+
+All versions use the paper-scale dataset (`-DPAPER_DATASET`). Other dataset sizes are defined in `doitgen.h`.
+
+## Run
+
+```bash
+./doitgen_pim_fast.exe
+```
+
+The kernel takes no arguments.
+
+## Output
+
+The PUD versions write `bbop_statistics.csv`, `transposition.csv`, and
+`bbop_resolution.csv` to the working directory. See `../README.md` for their
+format.

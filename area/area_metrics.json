@@ -1,0 +1,59 @@
+{
+  "dram_components_percent": {
+    "mimdram_fine_grained_mat": 1.11,
+    "lisa_inter_subarray": 0.6,
+    "salp_row_decoder": 0.15
+  },
+  "dram_total_percent": 1.86,
+  "mabm_expected_logic_cells": 0,
+  "schedule_scratchpad_kib": 16,
+  "largest_schedule_entries": 1350,
+  "bytes_per_schedule_entry": 4,
+  "largest_schedule_kib": 5.2734375,
+  "controller_area_mm2": 0.27,
+  "cpu_die_area_percent": 0.05,
+  "eliminated_transposition_unit_mm2": 0.06,
+  "vendor_compute_budget_percent": 25.0,
+  "comparison": [
+    {
+      "name": "newton_aim",
+      "label": "In-DRAM MAC Compute\\n(Newton / AiM)",
+      "area_percent": 20.0,
+      "display_value": "~20%",
+      "mechanism_class": "active_compute",
+      "vendor_evidence": true
+    },
+    {
+      "name": "ddr5_prac",
+      "label": "DDR5 Per-Row Counters\\n(PRAC)",
+      "area_percent": 9.0,
+      "display_value": "~9%",
+      "mechanism_class": "counter",
+      "vendor_evidence": true
+    },
+    {
+      "name": "pipedram",
+      "label": "PipeDRAM, This Work\\n(LISA + Mat + SALP)",
+      "area_percent": 1.86,
+      "display_value": "1.86%",
+      "mechanism_class": "passive",
+      "vendor_evidence": false
+    },
+    {
+      "name": "sectored_dram",
+      "label": "Sectored DRAM",
+      "area_percent": 1.72,
+      "display_value": "1.72%",
+      "mechanism_class": "passive",
+      "vendor_evidence": false
+    },
+    {
+      "name": "mimdram",
+      "label": "Fine-Grained Mat\\n(MIMDRAM)",
+      "area_percent": 1.11,
+      "display_value": "1.11%",
+      "mechanism_class": "passive",
+      "vendor_evidence": false
+    }
+  ]
+}

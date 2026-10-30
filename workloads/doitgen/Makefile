@@ -1,0 +1,18 @@
+CC = gcc
+CFLAGS = -fopenmp -lm -O3 -w 
+
+.PHONY: all
+
+all: doitgen_pim.exe doitgen_pim_fast.exe doitgen_baseline.exe
+
+doitgen_pim.exe: doitgen.c polybench.c ../util/bbop_manager.c
+	$(CC) $^ -DPAPER_DATASET -DRUN_PIM -o $@ $(CFLAGS)
+
+doitgen_pim_fast.exe: doitgen.c polybench.c ../util/bbop_manager.c
+	$(CC) $^ -DPAPER_DATASET -DRUN_PIM -DBBOP_SKIP_COMPUTE -o $@ $(CFLAGS)
+
+doitgen_baseline.exe: doitgen.c polybench.c ../util/bbop_manager.c
+	$(CC) $^ -DGET_TIME -DPAPER_DATASET -DRUN_BASELINE -o $@ $(CFLAGS)
+
+clean:
+	rm -f doitgen_pim.exe doitgen_pim_fast.exe doitgen_baseline.exe

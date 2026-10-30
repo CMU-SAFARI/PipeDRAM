@@ -1,0 +1,12 @@
+{
+  "heartwall_test_4k_avi": {
+    "sha256": "c51d82f46b5c95c4257d906ab1f399209ee511c73e87eea32340c7547a0f0d81",
+    "status": "user-supplied paper input; not redistributed"
+  },
+  "kmeans_10000_16384_txt": {
+    "generator": "workloads/kmeans/datagen.cpp",
+    "seed": 11,
+    "sha256": "c4d6982efb1ea5354c5de841bd1192f1a6824f1cc21277b37e61221e83c9d899",
+    "status": "generated on demand"
+  }
+}

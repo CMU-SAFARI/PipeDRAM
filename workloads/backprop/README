@@ -1,0 +1,43 @@
+# backprop (Rodinia)
+
+Back-propagation training of a layered neural network.
+
+## Benchmark source
+
+Rodinia Benchmark Suite 3.1 (http://lava.cs.virginia.edu/wiki/rodinia).
+
+Contact (for the original code):
+
+- Ke Wang: kw5na@virginia.edu
+- Shuai Che: sc5nf@cs.virginia.edu
+- Kevin Skadron: skadron@cs.virginia.edu
+
+## Build
+
+```bash
+make
+```
+
+`make` builds `backprop_baseline.exe`, `backprop_pim.exe`, `backprop_pim_fast.exe`.
+
+| Executable | Description |
+| --- | --- |
+| `backprop_baseline.exe` | CPU baseline |
+| `backprop_pim.exe` | PUD-instrumented version; also executes every bbop on the CPU |
+| `backprop_pim_fast.exe` | PUD-instrumented version without CPU execution of bbops (used by `scripts/run_workloads.sh`) |
+
+The number of OpenMP threads is set by `NUM_THREAD` in `backprop.h`.
+
+## Run
+
+The only argument is the number of input units. The paper uses:
+
+```bash
+./backprop_pim_fast.exe 134217728
+```
+
+## Output
+
+The PUD versions write `bbop_statistics.csv`, `transposition.csv`, and
+`bbop_resolution.csv` to the working directory. See `../README.md` for their
+format.

@@ -1,0 +1,49 @@
+# 3mm (PolyBench/C)
+
+Three matrix multiplications, `G = (A*B)*(C*D)`.
+
+## Benchmark source
+
+```
+* * * * * * * * * * * * * * *
+* PolyBench/C 4.2.1 (beta)  *
+* * * * * * * * * * * * * * *
+```
+
+Copyright (c) 2011-2016 The Ohio State University.
+
+Contact (for the original code):
+
+- Louis-Noel Pouchet <pouchet@cse.ohio-state.edu>
+- Tomofumi Yuki <tomofumi.yuki@inria.fr>
+
+## Build
+
+```bash
+make
+```
+
+`make` builds `3mm_pim.exe`, `3mm_pim_fast.exe`, `3mm_pim_int4.exe`, `3mm_baseline.exe`.
+
+| Executable | Description |
+| --- | --- |
+| `3mm_baseline.exe` | CPU baseline |
+| `3mm_pim.exe` | PUD-instrumented version; also executes every bbop on the CPU |
+| `3mm_pim_fast.exe` | PUD-instrumented version without CPU execution of bbops (used by `scripts/run_workloads.sh`) |
+| `3mm_pim_int4.exe` | PUD-instrumented version with 4-bit data (writes `bbop_statistics_int4.csv` and `transposition_int4.csv`) |
+
+All versions use the paper-scale dataset (`-DPAPER_DATASET`). Other dataset sizes are defined in `3mm.h`.
+
+## Run
+
+```bash
+./3mm_pim_fast.exe
+```
+
+The kernel takes no arguments.
+
+## Output
+
+The PUD versions write `bbop_statistics.csv`, `transposition.csv`, and
+`bbop_resolution.csv` to the working directory. See `../README.md` for their
+format.

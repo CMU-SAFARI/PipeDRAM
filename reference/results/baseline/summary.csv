@@ -1,0 +1,13 @@
+workload,time_ms,energy_j,method
+2mm,17326252.1,3034329.1,extrapolated
+3mm,26062048.7,4935828.1,extrapolated
+backprop,43105.9,3895.1,direct
+covariance,8603501.5,1384258.6,extrapolated
+doitgen,129195.4,22613.8,direct
+fdtd-apml,862.2,129.5,direct
+gemm,8480320.7,1603212.4,extrapolated
+gramschmidt,18312297.2,2955444.1,extrapolated
+heartwall,987.8,348.1,direct
+kmeans,100.7,26.0,direct
+pca,56187.0,7922.9,direct
+x264,15678.0,1392.4,direct

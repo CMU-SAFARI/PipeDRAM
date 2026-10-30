@@ -1,0 +1,46 @@
+# pca (Phoenix)
+
+Computes the mean vector and the covariance matrix of a randomly generated
+matrix (the first step of principal component analysis).
+
+## Benchmark source
+
+The Phoenix source code is distributed with a BSD license. The copyright is
+held by Stanford University. Phoenix is provided "as is" without any
+guarantees of any kind. Please contact Christos Kozyrakis
+(kozyraki@stanford.edu) for further information.
+
+Repository: https://github.com/kozyraki/phoenix/
+
+## Build
+
+```bash
+make
+```
+
+`make` builds `pca_pim.exe`, `pca_pim_fast.exe`, `pca_baseline.exe`.
+
+| Executable | Description |
+| --- | --- |
+| `pca_baseline.exe` | CPU baseline |
+| `pca_pim.exe` | PUD-instrumented version; also executes every bbop on the CPU |
+| `pca_pim_fast.exe` | PUD-instrumented version without CPU execution of bbops (used by `scripts/run_workloads.sh`) |
+
+## Run
+
+```
+pca_<version>.exe -r <num_rows> -c <num_cols> [-s <max_value>]
+```
+
+`-s` sets the maximum random value used to initialize the matrix. The paper
+uses:
+
+```bash
+./pca_pim_fast.exe -r 16000 -c 16000
+```
+
+## Output
+
+The PUD versions write `bbop_statistics.csv`, `transposition.csv`, and
+`bbop_resolution.csv` to the working directory. See `../README.md` for their
+format.

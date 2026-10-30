@@ -1,0 +1,138 @@
+{
+  "figure12_mat_utilization": {
+    "2mm": {
+      "mats_used": 32,
+      "mean_percent": 100.0
+    },
+    "3mm": {
+      "mats_used": 32,
+      "mean_percent": 100.0
+    },
+    "bp": {
+      "mats_used": 32,
+      "mean_percent": 100.0
+    },
+    "cov": {
+      "mats_used": 32,
+      "mean_percent": 78.19063004846527
+    },
+    "dg": {
+      "mats_used": 32,
+      "mean_percent": 100.0
+    },
+    "fdtd": {
+      "mats_used": 32,
+      "mean_percent": 77.68321802485765
+    },
+    "gmm": {
+      "mats_used": 32,
+      "mean_percent": 100.0
+    },
+    "gs": {
+      "mats_used": 32,
+      "mean_percent": 88.04016143321194
+    },
+    "hw": {
+      "mats_used": 32,
+      "mean_percent": 100.0
+    },
+    "km": {
+      "mats_used": 32,
+      "mean_percent": 100.0
+    },
+    "pca": {
+      "mats_used": 32,
+      "mean_percent": 78.40383931745467
+    },
+    "x264": {
+      "mats_used": 8,
+      "mean_percent": 25.0
+    }
+  },
+  "figure13_crossover_elements": {
+    "16": 22190.511262904514,
+    "32": 121437.89140373505,
+    "8": 11978.540903086918
+  },
+  "figure14_exposed_carry_percent": {
+    "2mm": 1.3871471539464983,
+    "3mm": 1.3871471539464983,
+    "bp": 0.06964167220652068,
+    "cov": 0.9561159565525313,
+    "dg": 1.8849640154404024,
+    "fdtd": 2.9201410219509083,
+    "gmm": 1.3871471539464983,
+    "gs": 1.3871471539464983,
+    "hw": 1.8849640154404024,
+    "km": 1.7153911199729375,
+    "pca": 1.7153911199729375,
+    "x264": 30.889762192664246
+  },
+  "figure4_workload_overhead": {
+    "2mm": {
+      "energy_percent": 8.050230225267782,
+      "latency_percent": 9.627345892665762
+    },
+    "3mm": {
+      "energy_percent": 12.335093227016424,
+      "latency_percent": 14.618198609217327
+    },
+    "backprop": {
+      "energy_percent": 99.96940277866524,
+      "latency_percent": 99.97484959326495
+    },
+    "covariance": {
+      "energy_percent": 10.117476989346798,
+      "latency_percent": 12.046526425883243
+    },
+    "doitgen": {
+      "energy_percent": 4.480111559514633,
+      "latency_percent": 5.398874108795437
+    },
+    "fdtd-apml": {
+      "energy_percent": 99.61734757200605,
+      "latency_percent": 99.68223451700172
+    },
+    "gemm": {
+      "energy_percent": 3.6164424596649214,
+      "latency_percent": 4.366183450463615
+    },
+    "gramschmidt": {
+      "energy_percent": 5.270524607049315,
+      "latency_percent": 6.3391707214961945
+    },
+    "heartwall": {
+      "energy_percent": 5.450828323476947,
+      "latency_percent": 6.55500051358376
+    },
+    "kmeans": {
+      "energy_percent": 73.20837669670208,
+      "latency_percent": 76.86930286583794
+    },
+    "pca": {
+      "energy_percent": 3.4619184233405216,
+      "latency_percent": 4.177238417628124
+    },
+    "x264": {
+      "energy_percent": 0.6978576256889301,
+      "latency_percent": 1.9112078303847493
+    }
+  },
+  "normalized_geomeans": {
+    "mimdram_worst_energy_mj_gmean": 0.43211785844073536,
+    "mimdram_worst_latency_ms_gmean": 8.745444667059656,
+    "pipedram_hier_energy_mj_gmean": 0.14357573345461788,
+    "pipedram_hier_latency_ms_gmean": 0.7440299992933567,
+    "pipedram_pipe_energy_mj_gmean": 0.06593811190761195,
+    "pipedram_pipe_latency_ms_gmean": 0.8472246823383361,
+    "pipedram_seq_energy_mj_gmean": 0.06593811190761195,
+    "pipedram_seq_latency_ms_gmean": 8.616327038604053,
+    "proteus_worst_energy_mj_gmean": 5.459736676010152,
+    "proteus_worst_latency_ms_gmean": 59.81278923574204,
+    "simdram_worst_energy_mj_gmean": 3.6486356261455053,
+    "simdram_worst_latency_ms_gmean": 8.757800846154103
+  },
+  "schema_version": 1,
+  "workload_count": 12,
+  "x264_frozen_result_present": true
+}

@@ -1,0 +1,75 @@
+{
+  "artifact": "PipeDRAM",
+  "figures": {
+    "4": {
+      "generator": "plotting/plot_transposition_reuse.py",
+      "inputs": [
+        "pud_simulator/",
+        "reference/results/*_bbop_statistics.csv",
+        "reference/results/*_transposition.csv"
+      ],
+      "output": "transposition_reuse_combined.pdf"
+    },
+    "9": {
+      "generator": "plotting/plot_combined_scalability.py",
+      "inputs": [
+        "pud_simulator/"
+      ],
+      "output": "combined_scalability.pdf"
+    },
+    "10": {
+      "generator": "plotting/plot_speedup.py",
+      "inputs": [
+        "reference/results/*_bbop_statistics.csv"
+      ],
+      "output": "workload_normalized_combined.pdf"
+    },
+    "11": {
+      "generator": "plotting/plot_energy_efficiency.py",
+      "inputs": [
+        "reference/results/*_bbop_statistics.csv",
+        "reference/results/baseline/summary.csv"
+      ],
+      "output": "energy_efficiency_cpu_normalized.pdf"
+    },
+    "12": {
+      "generator": "plotting/plot_mat_utilization.py",
+      "inputs": [
+        "pud_simulator/",
+        "instrumented operation mixes"
+      ],
+      "output": "mat_utilization.pdf"
+    },
+    "13": {
+      "generator": "plotting/plot_precision_datasize_tradeoff.py",
+      "inputs": [
+        "pud_simulator/"
+      ],
+      "output": "precision_datasize_tradeoff.pdf"
+    },
+    "14": {
+      "generator": "plotting/plot_exposed_carry.py",
+      "inputs": [
+        "pud_simulator/",
+        "workload sizes"
+      ],
+      "output": "exposed_carry.pdf"
+    }
+  },
+  "area_analysis": {
+    "generator": "plotting/plot_area_comparison.py",
+    "verification": "tools/verify_area.py",
+    "inputs": [
+      "area/area_metrics.json",
+      "area/rtl/"
+    ],
+    "output": "area_comparison.pdf"
+  },
+  "immutable_external_measurements": [
+    "reference/results/baseline/summary.csv",
+    "reference/results/cpu_gpu_results.csv"
+  ],
+  "unavailable_source": [
+    "x264 SPEC CPU2017 source and media"
+  ]
+}
